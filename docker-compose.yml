@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: nest-api
     ports:
-      - "3001:3001"
+      - "8098:8098"
     volumes:
       - ./api:/app
       - /app/node_modules
@@ -21,12 +21,12 @@ services:
       dockerfile: Dockerfile
     container_name: next-app
     ports:
-      - "3000:3000"
+      - "8099:8099"
     volumes:
       - ./application:/app
       - /app/node_modules
     environment:
-      NEXT_PUBLIC_API_URL: http://localhost:3001
+      NEXT_PUBLIC_API_URL: http://localhost:8098
     depends_on:
       - api
     command: npm run dev
