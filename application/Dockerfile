@@ -8,7 +8,7 @@ RUN npm run build
 
 # --- runner ---
 FROM node:20-alpine
-WORKDIR /app
+WORKDIR /
 ENV NODE_ENV=production
 COPY --from=builder /app ./
 
