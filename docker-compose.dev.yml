@@ -13,7 +13,7 @@ services:
       - /app/node_modules
     env_file:
       - ./api/.env
-    command: npm run start
+    command: npm run start:dev
 
   web:
     build:
@@ -29,4 +29,4 @@ services:
       NEXT_PUBLIC_API_URL: http://localhost:8098
     depends_on:
       - api
-    command: npm run start
+    command: npm run dev
