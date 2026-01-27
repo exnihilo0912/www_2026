@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: nest-api
     ports:
-      - "8098:8098"
+      - "8098:3000"
     volumes:
       - ./api:/app
       - /app/node_modules
@@ -21,7 +21,7 @@ services:
       dockerfile: Dockerfile
     container_name: next-app
     ports:
-      - "8099:8099"
+      - "8099:3000"
     volumes:
       - ./application:/app
       - /app/node_modules
