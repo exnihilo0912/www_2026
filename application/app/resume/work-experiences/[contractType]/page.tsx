@@ -1,0 +1,9 @@
+export default async function WorkExperiencesByContractTypePage(props: { params: Promise<{ contractType: string }>}) {
+  const { contractType } = await props.params;
+
+  return (
+    <div className="w-full bg-panel rounded-[12] border border-panel p-3">
+      Resume - Work Experiences - {contractType}
+    </div>
+  );
+}

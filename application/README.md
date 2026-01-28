@@ -34,3 +34,23 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+# TODO
+
+## General
+
+- clean code
+- clean tailwind custom values
+
+## Landing
+
+### header
+
+- add shrink behavior outside of landing
+- add custom status block on the right end
+
+## Resume-pages
+
+- landing page
+- by [type] (i.e resume/academics, .../work-experiences)
+  - by [contract-type] slug (i.e resume/work-experiences/internship, .../freelance, .../cdi)

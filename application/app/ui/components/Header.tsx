@@ -1,12 +1,19 @@
 'use client'
 
-import { HomeIcon, UserCircleIcon, QuestionMarkCircleIcon, CommandLineIcon } from '@heroicons/react/24/outline';
+import {
+  AcademicCapIcon,
+  CommandLineIcon,
+  HomeIcon,
+  QuestionMarkCircleIcon,
+  UserCircleIcon,
+} from '@heroicons/react/24/outline';
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const menuItems = [
   { id: 'home', label: 'Home', icon: <HomeIcon />, path: '/' },
-  { id: 'resume', label: 'About', icon: <UserCircleIcon />, path: '/about' },
+  { id: 'resume', label: 'Resume', icon: <AcademicCapIcon />, path: '/resume' },
+  { id: 'about', label: 'About', icon: <UserCircleIcon />, path: '/about' },
   { id: 'projects', label: 'Projects', icon: <CommandLineIcon />, path: '/projects' },
   { id: 'misc', label: 'Misc.', icon: <QuestionMarkCircleIcon />, path: '/misc' },
 ];
