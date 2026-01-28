@@ -1,24 +1,20 @@
-version: "3.9"
-
 services:
-  api:
+  api-dev:
     build:
       context: ./api
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     container_name: nest-api
     ports:
       - "8098:3000"
     volumes:
       - ./api:/app
       - /app/node_modules
-    env_file:
-      - ./api/.env
     command: npm run start:dev
 
-  web:
+  web-dev:
     build:
       context: ./application
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     container_name: next-app
     ports:
       - "8099:3000"
@@ -27,6 +23,4 @@ services:
       - /app/node_modules
     environment:
       NEXT_PUBLIC_API_URL: http://localhost:8098
-    depends_on:
-      - api
     command: npm run dev
