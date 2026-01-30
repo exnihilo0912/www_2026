@@ -7,12 +7,11 @@ export default function ResumePage() {
     {id: 'c', title: 'Elem C'},
     {id: 'd', title: 'Elem D'},
   ];
-
+      {/* <Timeline items={items} displayType="alternate">
+        {(item) => <div>{item.title}</div>}
+      </Timeline> */}
   return (
     <div className="w-full bg-panel rounded-[12] border border-panel p-3 flex justify-center">
-      <Timeline items={items} displayType="alternate">
-        {(item) => <div>{item.title}</div>}
-      </Timeline>
     </div>
   );
 }
