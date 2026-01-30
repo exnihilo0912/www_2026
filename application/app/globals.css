@@ -5,7 +5,7 @@
 @theme {
   --color-site-background: rgb(236, 239, 243);
   --color-base: #ffffff;
-  --color-base-border: rgb(44, 44, 44);
+  --color-base-border: rgb(235, 238, 243);
   --color-panel: rgb(246, 248, 250);
   --color-panel-border: #ebeef3;
   --color-element-primary: rgb(13, 13, 18);
@@ -25,6 +25,7 @@
       --color-panel-border: #2c2c2c;
       --color-panel: rgb(44, 44, 44);
       --color-base: rgb(33, 33, 33);
+      --color-base-border: rgb(44, 44, 44);
       --color-base-shadow: rgba(10, 10, 10, 0.2);
       --color-block: rgb(66, 66, 66);
     }

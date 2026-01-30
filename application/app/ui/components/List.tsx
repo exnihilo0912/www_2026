@@ -1,12 +1,3 @@
-type ListItem = { id: string } & unknown;
-
-interface ListItemProps {
-  children: React.ReactNode;
-}
-export function ListItem({ children }: ListItemProps) {
-  return <li className="bg-list-item p-2 rounded-md">{children}</li>
-}
-
 interface ListProps {
   items: ListItem[];
   children: (item: unknown) => React.ReactNode;
@@ -17,3 +8,13 @@ export default function List({ items, children }: ListProps) {
   </ul>;
 }
 List.ListItem = ListItem;
+
+type ListItem = { id: string } & unknown;
+interface ListItemProps {
+  children: React.ReactNode;
+}
+export function ListItem({ children }: ListItemProps) {
+  return <li className="bg-list-item p-2 rounded-md border border-base-border shadow-basic shadow-base-shadow">
+    {children}
+  </li>;
+}

@@ -25,7 +25,7 @@ export default function Header() {
   // if segments.length > 1, not root => shrink header
 
   return (
-    <header className="flex items-center justify-between h-[64] fixed w-96/100 md:w-45/100 rounded-[12] top-[8] md:top-[16] left-['calc(50% - 96% / 2)'] pl-[16] pr-[16] bg-base shadow-basic shadow-base-shadow">
+    <header className="z-2 flex items-center justify-between h-[64] fixed w-96/100 md:w-45/100 rounded-[12] top-[8] md:top-[16] left-['calc(50% - 96% / 2)'] pl-[16] pr-[16] bg-base shadow-basic shadow-base-shadow">
       <nav>
         <ul className="flex gap-6 md:gap-3">
           {menuItems.map(({ id, icon, path }) => 
