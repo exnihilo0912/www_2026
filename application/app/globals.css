@@ -9,6 +9,8 @@
   --color-panel: rgb(246, 248, 250);
   --color-panel-border: #ebeef3;
   --color-element-primary: rgb(13, 13, 18);
+  --color-list-container: transparent;
+  --color-list-item: white;
 
   --shadow-basic: 0px 1.2672px 1.2672px 0px rgba(0, 0, 0, 0.08), 0px 5.06879px 10.1376px 0px rgba(0, 0, 0, 0.08);
   --color-base-shadow: rgba(102, 109, 128, 0.08);

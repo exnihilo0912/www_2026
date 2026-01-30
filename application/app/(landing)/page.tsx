@@ -1,56 +1,18 @@
-import { fetchEntities, fetchWorkExperiences } from "../lib/data";
+import { Suspense } from 'react';
 
-function Card() {
-  return (
-    <div className="flex flex-col w-full max-w-[640] p-5 gap-6">
-      <header className="flex justify-between items-center">
-        <div>Fullstack Engineer</div>
-        <div className="flex gap-1.5 items-center bg-stone-300 rounded-full pl-2 pr-3 h-[20] text-[12px] uppercase text-center font-semibold text-stone-700 tracking-wide">
-          <i className="block size-1.5 rounded-full bg-stone-700"></i>
-          Available
-        </div>
-      </header>
-      <div className="flex flex-col md:flex-row items-center gap-6">
-        <div className="size-[120] md:size-[140] rounded-full bg-stone-200 md:order-last">
-        </div>
-        <div className=" flex flex-col gap-4 grow items-center md:items-start">
-          <div className="text-[24px] md:text-[36px] font-semibold">Hey, I'm Adam</div>
-          <p className="text-stone-600 text-center md:text-start">
-            I'm a JS/TS FullStack Engineer
-            <br/>
-            Looking for new opportunities
-          </p>
-          <div className="flex gap-2">
-            <button className="bg-stone-900 text-white text-[14px] font-semibold p-2 rounded-[6]">Learn more</button>
-            <button className="bg-white text-stone-800 text-[14px] font-semibold p-2 rounded-[6] border border-stone-100 shadow-basic shadow-base-shadow">Contact me</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+import IntroCard from "@/app/ui/components/IntroCard";
+import WorkExperienceList from "@/app/ui/components/WorkExperienceList";
 
 export default async function Home() {
-  const workEntities = await fetchEntities();
-  const workExperiences = await fetchWorkExperiences();
-
   return (
     <>
-    <Card />
+    <IntroCard />
     <div className="w-full bg-panel rounded-[12] border border-panel p-3">
       <div className="font-semibold">Work Experiences</div>
-      <div>
-       <ul className="flex flex-col gap-2">
-        {workExperiences.map((workExperience) => {
-          const entity = workEntities.find(({ id }) => id === workExperience.entity_id);
-
-          return <li key={workExperience.id}>
-            <div>{workExperience.title}</div>
-            {entity && <div>{entity.name}</div>}
-          </li>
-        })}
-       </ul>
-      </div>
+      {/* Replace this with a proper skeleton */}
+      <Suspense fallback={<p>loading...</p>}>
+        <WorkExperienceList />
+      </Suspense>
     </div>
     <div className="w-full h-48 bg-panel rounded-[12] border border-panel p-3">
       Projects
