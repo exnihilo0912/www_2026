@@ -1,3 +1,5 @@
+import { fetchEntities, fetchWorkExperiences } from "../lib/data";
+
 function Card() {
   return (
     <div className="flex flex-col w-full max-w-[640] p-5 gap-6">
@@ -28,15 +30,35 @@ function Card() {
   );
 }
 
-export default function Home() {
+export default async function Home() {
+  const workEntities = await fetchEntities();
+  const workExperiences = await fetchWorkExperiences();
+
   return (
     <>
     <Card />
-    <div className="w-full h-24 bg-panel rounded-[12] border border-panel p-3">
-      toto
+    <div className="w-full bg-panel rounded-[12] border border-panel p-3">
+      <div className="font-semibold">Work Experiences</div>
+      <div>
+       <ul className="flex flex-col gap-2">
+        {workExperiences.map((workExperience) => {
+          const entity = workEntities.find(({ id }) => id === workExperience.entity_id);
+
+          return <li key={workExperience.id}>
+            <div>{workExperience.title}</div>
+            {entity && <div>{entity.name}</div>}
+          </li>
+        })}
+       </ul>
+      </div>
     </div>
     <div className="w-full h-48 bg-panel rounded-[12] border border-panel p-3">
-      tutu
+      Projects
+      <div>project list...</div>
+    </div>
+    <div className="w-full h-48 bg-panel rounded-[12] border border-panel p-3">
+      Skills
+      <div>skill list...</div>
     </div>
     </>
   );
