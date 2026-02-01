@@ -14,7 +14,7 @@ export default function BusinessCard() {
   // TODO remove text => fetch card data
   return (
     <div className="flex flex-col w-full md:max-w-4/5 p-5 gap-6 shadow-basic shadow-base-shadow rounded-lg mb-4">
-      <header className="flex justify-between items-center">
+      <header className="flex justify-between">
         <Avatar />
         <Tag>{presentation.status}</Tag>
       </header>

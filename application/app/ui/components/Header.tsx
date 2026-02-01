@@ -30,7 +30,8 @@ const menuItems = [
 ];
 export default function Header() {
   const pathname = usePathname();
-  const isLanding = !pathname.split('/').filter(Boolean).length;
+  const isLanding = true;
+  // const isLanding = !pathname.split('/').filter(Boolean).length;
   const headerWidth = isLanding ? 'w-96/100 md:w-45/100 left-[\'calc(50% - 96% / 2)\'] px-4 top-[8] md:top-[16]' : 'size-[60] overflow-hidden right-2 px-2 bottom-2 md-bottom-4'
   // TODO add open/close status
   return (
@@ -40,7 +41,12 @@ export default function Header() {
           <nav>
             <ul className="flex gap-4 md:gap-3">
               {menuItems.map(({ id, icon, path }) =>
-                <li key={id} className="flex items-center justify-center size-[32] text-stone-500 hover:text-stone-800 hover:bg-panel hover:rounded-full">
+                <li key={id} className={
+                  [
+                    "flex items-center justify-center size-[32] text-stone-500 rounded-full hover:text-stone-800 hover:bg-panel",
+                    path.split('/').at(1) === pathname.split('/').at(1) ? "text-stone-800 bg-panel": ""
+                  ].join(' ')
+                }>
                   <Link href={path}>
                     <div className="size-[24]">{icon}</div>
                   </Link>
