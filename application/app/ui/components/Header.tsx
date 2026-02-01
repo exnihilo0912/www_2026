@@ -4,6 +4,7 @@ import {
   AcademicCapIcon,
   CommandLineIcon,
   HomeIcon,
+  PaperAirplaneIcon,
   QuestionMarkCircleIcon,
   UserCircleIcon,
 } from '@heroicons/react/24/outline';
@@ -24,6 +25,7 @@ const menuItems = [
   { id: 'about', label: 'About', icon: <UserCircleIcon />, path: '/about' },
   { id: 'projects', label: 'Projects', icon: <CommandLineIcon />, path: '/projects' },
   { id: 'misc', label: 'Misc.', icon: <QuestionMarkCircleIcon />, path: '/misc' },
+  { id: 'contact', label: 'contact', icon: <PaperAirplaneIcon />, path: '/#contact' },
 ];
 export default function Header() {
   return (

@@ -1,10 +1,4 @@
-function Footer() {
-  return (
-    <footer className="w-full h-48 p-3 bg-panel rounded-[12] border border-panel">
-      <div>Footer</div>
-    </footer>
-  );
-}
+import Footer from '@/app/ui/components/Footer';
 
 export default function LandingLayout({
   children,
