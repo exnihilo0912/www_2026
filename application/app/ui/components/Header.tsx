@@ -10,6 +10,14 @@ import {
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
+
+function Status() {
+  // TODO add url-base logic
+  const pathname = usePathname();
+
+  return <div>{pathname}</div>
+}
+
 const menuItems = [
   { id: 'home', label: 'Home', icon: <HomeIcon />, path: '/' },
   { id: 'resume', label: 'Resume', icon: <AcademicCapIcon />, path: '/resume' },
@@ -17,13 +25,7 @@ const menuItems = [
   { id: 'projects', label: 'Projects', icon: <CommandLineIcon />, path: '/projects' },
   { id: 'misc', label: 'Misc.', icon: <QuestionMarkCircleIcon />, path: '/misc' },
 ];
-
 export default function Header() {
-  // TODO add url-base logic
-  const pathname = usePathname();
-  const segments = pathname.split('/');
-  // if segments.length > 1, not root => shrink header
-
   return (
     <header className="z-2 flex items-center justify-between h-[64] fixed w-96/100 md:w-45/100 rounded-[12] top-[8] md:top-[16] left-['calc(50% - 96% / 2)'] pl-[16] pr-[16] bg-base shadow-basic shadow-base-shadow">
       <nav>
@@ -37,24 +39,7 @@ export default function Header() {
           )}
         </ul>
       </nav>
-      <div>{pathname}</div>
+      <Status/>
     </header>
   );
-}
-
-// Simplified breadcrumbs logic
-function Breadcrumbs() {
-  const pathname = usePathname()
-  const segments = pathname.split('/')
-
-  return (
-    <nav>
-      {segments.map((segment, index) => (
-        <span key={index}>
-          {' > '}
-          {segment}
-        </span>
-      ))}
-    </nav>
-  )
 }
