@@ -16,9 +16,6 @@ export default async function Home() {
       <Section title='Projects'>
         <div>project list...</div>
       </Section>
-      <Section title='Skills'>
-        <div>skill list...</div>
-      </Section>
     </>
   );
 }

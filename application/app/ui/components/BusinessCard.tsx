@@ -1,13 +1,12 @@
 import Avatar from "./Avatar";
 import Tag from "./Tag";
 
-
 const presentation = {
   title: 'Fullstack JS/TS Engineer',
   fullname: 'Adam Emmanuel',
   status: 'available',
   occupation: 'Looking for new opportunities',
-  skills: ['html5', 'css3', 'js', 'ts', 'react', 'node', 'next.js', 'nest.js'],
+  skills: ['html/css', 'js', 'ts', 'react', 'node', 'next.js', 'nest.js', 'tailwind'],
   avatar: '/images/avatar.webp',
 };
 

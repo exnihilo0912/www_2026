@@ -1,10 +1,8 @@
 import Image from "next/image";
 interface AvatarProps {
-  src?: string;
-  width?: number;
-  height?: number;
+  src: string;
 }
-export default function Avatar({ src}: AvatarProps) {
+export default function Avatar({ src }: AvatarProps) {
   return (
     <div className="size-[60] md:size-[90] rounded-full bg-stone-200 overflow-hidden">
       {src && <Image
