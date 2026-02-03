@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio 2026",
+  title: "Adam Emmanuel",
   description: "Adam Emmanuel -- Portfolio - 2026",
 };
 

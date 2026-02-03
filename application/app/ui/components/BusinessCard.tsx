@@ -8,6 +8,7 @@ const presentation = {
   status: 'available',
   occupation: 'Looking for new opportunities',
   skills: ['html5', 'css3', 'js', 'ts', 'react', 'node', 'next.js', 'nest.js'],
+  avatar: '/images/avatar.webp',
 };
 
 export default function BusinessCard() {
@@ -15,7 +16,7 @@ export default function BusinessCard() {
   return (
     <div className="flex flex-col w-full md:max-w-4/5 p-5 gap-6 shadow-basic shadow-base-shadow rounded-lg mb-4">
       <header className="flex justify-between">
-        <Avatar />
+        <Avatar src={presentation.avatar} />
         <Tag>{presentation.status}</Tag>
       </header>
       <div className="flex flex-col gap-1">
