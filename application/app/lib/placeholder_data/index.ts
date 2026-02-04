@@ -50,19 +50,6 @@ export const entities: Entity[] = [
   },
 ];
 export const workExperiences: WorkExperience[] = [
-  // {
-  //   id: 'one',
-  //   entity_id: entities[0].id,
-  //   title: 'FullStack Developer',
-  //   contract_type: 'permanent_contract',
-  //   location: { city: 'paris', country: 'FR' },
-  //   work_from: 'remote',
-  //   start_date: '2025-08-04',
-  //   end_date: '2025-12-12',
-  //   skills: ['JavaScript', 'TypeScript', 'React', 'Meteor'],
-  //   description: 'blabla',
-  //   individual_contributor_seniority: 'mid_level',
-  // },
   {
     id: 'two',
     entity_id: entities[1].id,
@@ -103,3 +90,11 @@ export const workExperiences: WorkExperience[] = [
     individual_contributor_seniority: 'mid_level',
   },
 ];
+
+export interface PersonalProject {
+  id: string;
+  name: string;
+  github_url: string;
+  url?: string;
+}
+export const personalProjects: PersonalProject[] = [];

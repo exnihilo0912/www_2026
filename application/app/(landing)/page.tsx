@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 
 import BusinessCard from "@/app/ui/components/BusinessCard";
 import Section from "@/app/ui/components/Section";
+import PersonalProjectList from "@/app/ui/components/PersonalProjectList";
 import WorkExperienceList from "@/app/ui/components/WorkExperienceList";
 
 export default async function Home() {
@@ -13,8 +14,10 @@ export default async function Home() {
           <WorkExperienceList />
         </Suspense>
       </Section>
-      <Section title='Projects'>
-        <div>project list...</div>
+      <Section title='Personal Projects'>
+        <Suspense fallback={<p>loading...</p>}>
+          <PersonalProjectList />
+        </Suspense>
       </Section>
     </>
   );

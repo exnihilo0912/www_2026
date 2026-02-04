@@ -4,7 +4,6 @@ import {
   AcademicCapIcon,
   CommandLineIcon,
   HomeIcon,
-  PaperAirplaneIcon,
   QuestionMarkCircleIcon,
   UserCircleIcon,
 } from '@heroicons/react/24/outline';

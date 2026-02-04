@@ -5,7 +5,7 @@ const presentation = {
   title: 'Fullstack JS/TS Engineer',
   fullname: 'Adam Emmanuel',
   status: 'available',
-  skills: ['html/css', 'js', 'ts', 'react', 'node', 'next.js', 'nest.js', 'tailwind'],
+  skills: ['html/css', 'js', 'ts', 'react', 'node', 'next.js', 'nest.js', 'tailwind', 'prisma'],
   avatar: '/images/avatar.webp',
 };
 
