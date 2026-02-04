@@ -26,7 +26,9 @@ export default function RootLayout({ children }: Readonly<{
     <html lang="en" data-theme="light">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col items-center bg-site-background dark:text-white`}>
         <Header />
+        <div className="flex flex-col h-fit items-center p-2 gap-2 mt-[80] md:mt-[96] mb-[48] w-96/100 md:w-45/100 bg-base shadow-basic shadow-base-shadow rounded-[16] text-[18px]">
         {children}
+        </div>
       </body>
     </html>
   );
