@@ -31,7 +31,7 @@ export default function Header() {
   const isActive = (path: string) => path.split('/').filter(Boolean).at(0) === pageRoot;
 
   return (
-    <header className="z-2 flex items-center justify-between h-[64] fixed rounded-[12] bg-base shadow-basic shadow-base-shadow w-96/100 md:w-45/100 left-[\'calc(50% - 96% / 2)\'] px-4 top-[8] md:top-[16]">
+    <header className="z-2 flex items-center justify-between h-[64] fixed rounded-[12] bg-base shadow-basic shadow-base-shadow w-96/100 md:w-45/100 left-[\'calc(50% - 96% / 2)\'] px-4 top-2 md:top-4">
           <nav>
             <ul className="flex gap-4 md:gap-3">
               {menuItems.map(({ id, icon, path }) =>

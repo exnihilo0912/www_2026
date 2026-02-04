@@ -1,9 +1,9 @@
 type TimelineItem = { id: string; content?: React.ReactNode } & Record<string, string>;
 
 function TimelineBlock(props: { children: React.ReactNode }) {
-  const afterPseudoElementClasses = 'after:size-[12px] after:block after:bg-stone-600 hover:after:bg-stone-800 after:absolute after:right-[calc(50%-6px)] after:rounded-full';
+  const afterPseudoElementClasses = 'after:size-3 after:block after:bg-stone-600 hover:after:bg-stone-800 after:absolute after:right-[calc(50%-6px)] after:rounded-full';
 
-  return <li className={["w-[calc(50%-12px)] h-[80] bg-stone-300 odd:self-end z-1 p-2 rounded-[6] hover:bg-stone-400", afterPseudoElementClasses].join(' ')}>
+  return <li className={["w-[calc(50%-12px)] h-20 bg-stone-300 odd:self-end z-1 p-2 rounded-md hover:bg-stone-400", afterPseudoElementClasses].join(' ')}>
     {props.children}
   </li>;
 }

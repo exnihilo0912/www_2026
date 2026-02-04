@@ -49,7 +49,7 @@ export default async function Home() {
             return (
               <Link href={url} target="_blank" className="flex flex-col gap-1">
                 {handle && <span>@{handle}</span>}
-                <span className="text-sm uppercase text-stone-500 font-medium tracking-wider">{label}</span>
+                <span className="text-sm uppercase text-stone-500 tracking-wider">{label}</span>
               </Link>
             )
           }}

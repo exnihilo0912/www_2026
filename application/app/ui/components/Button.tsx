@@ -12,7 +12,7 @@ const classesByType: Record<ButtonType, string> = {
 export default function Button({ children, type = 'primary' }: ButtonProps) {
   const buttonTypeClasses = classesByType[type] || classesByType['primary'];
   return (
-    <button className={["text-[14px] font-semibold p-2 rounded-[6]", buttonTypeClasses].join(' ')}>
+    <button className={["text-sm font-semibold p-2 rounded-md", buttonTypeClasses].join(' ')}>
       {children}
     </button>
   );
