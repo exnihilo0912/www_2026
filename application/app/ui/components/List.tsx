@@ -11,7 +11,7 @@ export default function List({ items, children }: ListProps) {
       ? items.map(({ id, ...item}) => <ListItem key={id}>{children(item)}</ListItem>)
       : <div className="text-stone-600 text-center p-4 flex flex-col items-center gap-2">
           <Square3Stack3DIcon className="size-10 text-stone-400"/>
-          <p>Nothing to see here</p>
+          <p className="text-stone-600">Nothing to see here</p>
         </div>
     }
   </ul>;
