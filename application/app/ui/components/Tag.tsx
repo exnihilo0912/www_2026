@@ -1,5 +1,4 @@
 interface TagProps { children: React.ReactNode }
-
 export default function Tag({ children }: TagProps) {
   // TODO Add status base color and bg-color
   return (

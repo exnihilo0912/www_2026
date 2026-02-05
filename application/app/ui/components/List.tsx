@@ -1,5 +1,7 @@
 import { Square3Stack3DIcon } from "@heroicons/react/24/solid";
 
+type ListItem = { id: string } & unknown;
+
 interface ListProps {
   items: ListItem[];
   children: (item: unknown) => React.ReactNode;
@@ -18,12 +20,10 @@ export default function List({ items, children }: ListProps) {
 }
 List.ListItem = ListItem;
 
-type ListItem = { id: string } & unknown;
 interface ListItemProps {
   children: React.ReactNode;
   className?: string;
 }
-
 export function ListItem({ children, className = '', ...props }: ListItemProps) {
   return <li className={['bg-list-item p-2 rounded-md border border-base-border shadow-basic shadow-base-shadow', className].join(' ' )} {...props}>
     {children}

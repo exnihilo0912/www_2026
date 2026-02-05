@@ -10,14 +10,6 @@ import {
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-
-function Status() {
-  const pathname = usePathname();
-  const pageRoot = pathname.split('/').filter(Boolean).at(0);
-
-  return <div>{pageRoot}</div>
-}
-
 const menuItems = [
   { id: 'home', label: 'Home', icon: <HomeIcon />, path: '/' },
   { id: 'resume', label: 'Resume', icon: <AcademicCapIcon />, path: '/resume' },
@@ -25,6 +17,7 @@ const menuItems = [
   { id: 'projects', label: 'Projects', icon: <CommandLineIcon />, path: '/projects' },
   { id: 'misc', label: 'Misc.', icon: <QuestionMarkCircleIcon />, path: '/misc' },
 ];
+
 export default function Header() {
   const pathname = usePathname();
   const pageRoot = pathname.split('/').filter(Boolean).at(0);
@@ -51,4 +44,11 @@ export default function Header() {
           <Status/>
     </header>
   );
+}
+
+function Status() {
+  const pathname = usePathname();
+  const pageRoot = pathname.split('/').filter(Boolean).at(0);
+
+  return <div>{pageRoot}</div>
 }

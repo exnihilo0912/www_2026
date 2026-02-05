@@ -1,15 +1,11 @@
 type TimelineItem = { id: string; content?: React.ReactNode } & Record<string, string>;
 
-function TimelineBlock(props: { children: React.ReactNode }) {
-  const afterPseudoElementClasses = 'after:size-3 after:block after:bg-stone-600 hover:after:bg-stone-800 after:absolute after:right-[calc(50%-6px)] after:rounded-full';
-
-  return <li className={["w-[calc(50%-12px)] h-20 bg-stone-300 odd:self-end z-1 p-2 rounded-md hover:bg-stone-400", afterPseudoElementClasses].join(' ')}>
-    {props.children}
-  </li>;
+interface TimelineProps {
+  items: TimelineItem[];
+  children?: (item: TimelineItem) => React.ReactNode;
+  displayType?: 'left' | 'right' | 'alternate';
 }
-
-export default function Timeline(props: { items: TimelineItem[], children?: (item: TimelineItem) => React.ReactNode, displayType: 'left' | 'right' | 'alternate' }) {
-  const { items, children, displayType } = props;
+export default function Timeline({ items, children, displayType = 'left' }: TimelineProps) {
 // TODO fix vertical bar height issue
   return (
     <ul className="container flex flex-col flex-wrap gap-2 w-full md:w-[320] p-2 bg-stone-200 relative">
@@ -20,4 +16,15 @@ export default function Timeline(props: { items: TimelineItem[], children?: (ite
         )}
     </ul>
   );
+}
+
+interface TimelineBlockProps {
+  children: React.ReactNode;
+}
+function TimelineBlock({ children }: TimelineBlockProps) {
+  const afterPseudoElementClasses = 'after:size-3 after:block after:bg-stone-600 hover:after:bg-stone-800 after:absolute after:right-[calc(50%-6px)] after:rounded-full';
+
+  return <li className={["w-[calc(50%-12px)] h-20 bg-stone-300 odd:self-end z-1 p-2 rounded-md hover:bg-stone-400", afterPseudoElementClasses].join(' ')}>
+    {children}
+  </li>;
 }
