@@ -1,11 +1,12 @@
 import { Suspense } from 'react';
 
+import Link from 'next/link';
+
 import BusinessCard from "@/app/ui/components/BusinessCard";
 import List from '@/app/ui/components/List';
 import PersonalProjectList from "@/app/ui/components/PersonalProjectList";
 import Section from "@/app/ui/components/Section";
 import WorkExperienceList from "@/app/ui/components/WorkExperienceList";
-import Link from 'next/link';
 
 interface SocialMedia {
   id: string;

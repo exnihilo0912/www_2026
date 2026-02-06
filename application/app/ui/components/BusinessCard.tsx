@@ -1,5 +1,5 @@
-import Avatar from "./Avatar";
-import Tag from "./Tag";
+import Avatar from "@/app/ui/components/Avatar";
+import Tag from "@/app/ui/components/Tag";
 
 const presentation = {
   title: 'Fullstack JS/TS Engineer',
