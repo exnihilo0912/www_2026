@@ -12,7 +12,10 @@ export interface WorkExperience {
   end_date?: string;
   skills: string[]; // TODO replace with "skill" type (name, type [library, language, software, framework, concept, ...])
   description: string; // TODO replace with "tasks/missions" type
+  challenges?: string[]; // Notable challenges I faced and overcame
+  outcomes?: string[]; // What did I learn from this experience
 }
+
 export type Specialty = 'frontend' | 'backend' | 'full_stack' | 'mobile' | 'devops' | 'data_engineer';
 export const specialties: { id: Specialty; label: string; }[] = [
   { id: 'frontend', label: 'Frontend Engineer' },
@@ -22,15 +25,8 @@ export const specialties: { id: Specialty; label: string; }[] = [
   { id: 'devops', label: 'DevOps Engineer' },
   { id: 'data_engineer', label: 'Data Engineer' },
 ];
-export interface Entity {
-  id: string;
-  name: string;
-  url: string;
-  logo?: string;
-  industry?: string;
-  size?: CompanySize;
-  project_types?: string[];
-}
+
+
 export type CompanySize = '1' | '2-10' | '10-50' | '50-100' | '100-500' | '500-1000' | '1000-5000' | '5000-10000' | '10000+';
 export const companySizes: { id: CompanySize; label: string; }[] = [
   { id: '1', label: 'Solo Founder' },
@@ -52,6 +48,15 @@ export type WorkLocation = 'remote' | 'on_site' | 'hybrid';
 export type IndividualContributorSeniority = 'intern' | 'junior' | 'mid_level' | 'senior' | 'staff' | 'senior_staff' | 'principal';
 export type ManagementSeniority = 'manager' | 'senior_manager' | 'director' | 'senior_director' | 'vp' | 'cto';
 
+export interface Entity {
+  id: string;
+  name: string;
+  url: string;
+  logo?: string;
+  industry?: string;
+  size?: CompanySize;
+  project_types?: string[];
+}
 export const entities: Entity[] = [
   {
     id: 'tridge',
