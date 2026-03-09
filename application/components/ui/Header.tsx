@@ -21,14 +21,14 @@ export default function Header({ pathname = '/' }: { pathname?: string }) {
   const isActive = (path: string) => path.split('/').filter(Boolean).at(0) === pageRoot;
 
   return (
-    <header className="z-2 flex items-center justify-between h-[64] fixed rounded-[12] bg-base shadow-basic shadow-base-shadow w-96/100 md:w-45/100 left-[\'calc(50% - 96% / 2)\'] px-4 top-2 md:top-4">
+    <header className="fixed md:absolute z-2 flex items-center justify-between bg-[hsla(240, 1%, 17%, .75)] h-[64] rounded-[12] w-full md:w-fit px-4 md:px-8 bottom-0 left-0 md:top-0 md:right-0 md:left-auto border border-stone-200 md:border-t-0 md:border-r-0 md:rounded-tl-none md:rounded-br-none backdrop-blur-md">
           <nav>
             <ul className="flex gap-4 md:gap-3">
               {menuItems.map(({ id, icon, label, path }) =>
                 <li key={id} className={
                   [
-                    "flex items-center justify-center text-stone-500 rounded hover:text-stone-800 hover:bg-panel px-2 py-1",
-                    isActive(path) ? "text-stone-800 bg-panel": ""
+                    "flex items-center justify-center text-stone-500 rounded hover:text-stone-800 px-2 py-1",
+                    isActive(path) ? "text-stone-800 font-semibold": ""
                   ].join(' ')
                 }>
                   <Link href={path}>

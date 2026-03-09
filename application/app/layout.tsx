@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
 
+import { BusinessCard } from "@/features/myself";
 import Header from '@/components/ui/Header';
 
 const geistSans = Geist({
@@ -25,11 +26,16 @@ export default function RootLayout({ children }: Readonly<{
 }>) {
   return (
     <html lang="en" data-theme="light">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col items-center bg-site-background dark:text-white`}>
-        <Header />
-        <div className="flex flex-col h-fit items-center p-2 gap-2 mt-20 md:mt-24 mb-12 w-96/100 md:w-45/100 bg-base shadow-basic shadow-base-shadow rounded-2xl text-lg">
-        {children}
-        </div>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen h-screen flex flex-col items-center bg-site-background dark:text-white`}>
+        <main className="flex flex-col md:flex-row items-start p-3 gap-6 md:gap-4 md:mt-12 w-full max-w-[1200] h-full">
+          <BusinessCard />
+          <div className='relative bg-white grow-2 w-full min-h-full p-6 rounded-2xl border border-stone-200'>
+            <Header />
+            <div className="">
+              {children}
+            </div>
+          </div>
+        </main>
       </body>
     </html>
   );
