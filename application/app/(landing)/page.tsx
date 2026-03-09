@@ -1,12 +1,8 @@
-import { Suspense } from 'react';
-
 import Link from 'next/link';
 
-import BusinessCard from "@/app/ui/components/BusinessCard";
-import List from '@/app/ui/components/List';
-import PersonalProjectList from "@/app/ui/components/PersonalProjectList";
-import Section from "@/app/ui/components/Section";
-import WorkExperienceList from "@/app/ui/components/WorkExperienceList";
+import { BusinessCard } from "@/features/landing";
+import List from '@/components/ui/List';
+import Section from "@/components/ui/Section";
 
 interface SocialMedia {
   id: string;
@@ -33,16 +29,6 @@ export default async function Home() {
   return (
     <>
       <BusinessCard />
-      <Section title='Work Experiences'>
-        <Suspense fallback={<p>loading...</p>}>
-          <WorkExperienceList />
-        </Suspense>
-      </Section>
-      <Section title='Personal Projects'>
-        <Suspense fallback={<p>loading...</p>}>
-          <PersonalProjectList />
-        </Suspense>
-      </Section>
       <Section title='SNS'>
         <List items={socialMedias}>
           {(item) => {

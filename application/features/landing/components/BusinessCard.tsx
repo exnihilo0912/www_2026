@@ -1,5 +1,5 @@
-import Avatar from "@/app/ui/components/Avatar";
-import Tag from "@/app/ui/components/Tag";
+import Avatar from "@/components/ui/Avatar";
+import Tag from "@/components/ui/Tag";
 
 const presentation = {
   title: 'Fullstack JS/TS Engineer',
@@ -29,3 +29,5 @@ export default function BusinessCard() {
     </div>
   );
 }
+
+export { BusinessCard };
