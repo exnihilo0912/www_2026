@@ -23,7 +23,7 @@ export default function BusinessCard() {
       </div>
       <footer>
         <ul className="flex gap-2 flex-wrap">
-          {skills.map((skill) => <li key={skill} className="uppercase text-sm tracking-normal border border-base-border bg-panel py-1 px-2 rounded-full">{skill}</li>)}
+          {skills.map((skill) => <li key={skill} className="uppercase text-sm tracking-normal border border-base-border bg-panel py-1 px-2 rounded">{skill}</li>)}
         </ul>
       </footer>
     </div>

@@ -1,1 +1,0 @@
-export { BusinessCard }  from "./components/BusinessCard";

@@ -1,16 +1,15 @@
 import { Square3Stack3DIcon } from "@heroicons/react/24/solid";
 
-type ListItem = { id: string } & unknown;
-
-interface ListProps {
-  items: ListItem[];
-  children: (item: unknown) => React.ReactNode;
+type ItemWithId<T> = { id: string } & T;
+interface ListProps<T> {
+  items: ItemWithId<T>[];
+  children: (item: ItemWithId<T>) => React.ReactNode;
 }
-export default function List({ items, children }: ListProps) {
+export default function List<T>({ items, children }: ListProps<T>) {
   return <ul className="flex flex-col bg-list-container gap-2 p-1">
     {
       items.length
-      ? items.map(({ id, ...item}) => <ListItem key={id}>{children(item)}</ListItem>)
+      ? items.map((item) => <ListItem key={item.id}>{children(item)}</ListItem>)
       : <div className="text-stone-600 text-center p-4 flex flex-col items-center gap-2">
           <Square3Stack3DIcon className="size-10 text-stone-400"/>
           <p className="text-stone-600">Nothing to see here</p>
