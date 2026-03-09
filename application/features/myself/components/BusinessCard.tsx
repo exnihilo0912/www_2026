@@ -1,6 +1,11 @@
+'use client';
+
+import { useState } from "react";
+
 import Avatar from "@/components/ui/Avatar";
 import Tag from "@/components/ui/Tag";
 
+// TODO Add to myselfService/fetcher
 const presentation = {
   title: 'Fullstack TS/React',
   fullname: 'Adam Emmanuel',
@@ -10,24 +15,25 @@ const presentation = {
 };
 
 export default function BusinessCard() {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const { title, fullname, status, skills, avatar } = presentation;
+  function toggleIsOpen() {
+    setIsOpen((previousIsOpen) => !previousIsOpen);
+  }
+  const businessCardClasses = 'relative flex flex-col items-center md:max-h-full overflow-hidden w-full md:w-auto p-4 md:p-5 gap-4 md:gap-6 shadow-basic shadow-base-shadow rounded-2xl bg-white shrink-0 border border-stone-200';
+  const foldedBusinessCardClasses = isOpen ? 'max-h-[90]' : 'max-h-full';
   return (
-    <div className="flex md:flex-col items-center w-full md:w-auto p-4 md:p-5 gap-4 md:gap-6 shadow-basic shadow-base-shadow rounded-2xl bg-base shrink-0 border border-stone-200">
-      <Avatar src={avatar} />
-      <div className="flex flex-col md:items-center gap-1">
-        <span className="text-xl md:text-2xl font-semibold">{fullname}</span>
-        <span className="text-sm">{title}</span>
+    <div className={[businessCardClasses, foldedBusinessCardClasses].join(' ')}>
+      <div className="flex md:flex-col md:items-center gap-4 md:gap-2 w-full">
+        <Avatar src={avatar} />
+        <div className="flex flex-col md:items-center gap-1">
+          <span className="text-xl md:text-2xl font-semibold">{fullname}</span>
+          <span className="text-sm">{title}</span>
+        </div>
       </div>
-      {/* <div>
-        <Tag>{status}</Tag>
-      </div> */}
-      {/* <footer>
-        <ul className="flex gap-2 flex-wrap">
-          {skills.map((skill) => <li key={skill} className="uppercase text-sm tracking-normal border border-base-border bg-panel py-1 px-2 rounded">{skill}</li>)}
-        </ul>
-      </footer> */}
-      {/* TODO add state */}
-      <ul className="hidden md:visible p-0 m-0 w-full md:flex md:flex-col md:gap-4">
+      <button className="absolute top-0 right-0 size-8 bg-stone-100 border border-stone-200 md:hidden p-2" onClick={toggleIsOpen}>
+      </button>
+      <ul className="p-0 m-0 w-full md:flex md:flex-col md:gap-4">
         <li>
           <div className="flex gap-2 items-center">
             <div className="size-7 bg-stone-200 rounded"></div>
