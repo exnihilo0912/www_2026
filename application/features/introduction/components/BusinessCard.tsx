@@ -37,7 +37,7 @@ export default function BusinessCard({ profile, snsList }: BusinessCardProps) {
   const infoList = [
     { id: 'email', label: 'Email', icon: EnvelopeIcon, value: email },
     { id: 'location', label: 'Location', icon: MapPinIcon, value: location },
-    { id: 'dob', label: 'Date of Birth', icon: CakeIcon, value: birthDate },
+    { id: 'dob', label: 'Birthday', icon: CakeIcon, value: birthDate },
   ];
   function toggleIsOpen() {
     setIsOpen((previousIsOpen) => !previousIsOpen);
