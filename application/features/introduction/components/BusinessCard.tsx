@@ -1,42 +1,34 @@
 'use client';
 
 import { useState } from "react";
+import Link from "next/link";
 
 import Avatar from "@/components/ui/Avatar";
 import Tag from "@/components/ui/Tag";
-import Link from "next/link";
+import type { Profile, SocialMediaService } from "@/features/introduction/index";
 
-// TODO Add to myselfService/fetcher
-const presentation = {
-  title: 'Fullstack TS/React',
-  fullname: 'Adam Emmanuel',
-  status: 'available',
-  skills: ['html/css', 'js', 'ts', 'react', 'node', 'next.js', 'tailwind'],
-  avatar: '/images/avatar.webp',
-  infoList: [
-    { id: 'email', label: 'email', value: 'adam.emmanuel.pro@gmail.com' },
-    { id: 'dob', label: 'birthday', value: 'August 9th, 1992' }, //TODO replace with iso & toLocalDate
-    { id: 'location', label: 'location', value: 'Etampes (91), France' },
-  ],
-  sns: [
-    {
-      id: 'github',
-      label: 'GitHub',
-      url: 'https://github.com/exnihilo0912',
-      handle: 'exnihilo0912',
-    },
-    {
-      id: 'linkedin',
-      label: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/adam-emmanuel-118281102/',
-      handle: 'adam-emmanuel-118281102',
-    },
-  ]
-};
-
-export default function BusinessCard() {
+interface BusinessCardProps {
+  profile: Profile;
+  snsList: SocialMediaService[];
+}
+export default function BusinessCard({ profile, snsList }: BusinessCardProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const { title, fullname, status, skills, avatar } = presentation;
+  const {
+    title,
+    firstName,
+    lastName,
+    availability, // TODO Add
+    avatar,
+    email,
+    birthDate,
+    location,
+  } = profile;
+
+  const infoList = [
+    { id: 'email', label: 'Email', value: email },
+    { id: 'location', label: 'Location', value: location },
+    { id: 'dob', label: 'Date of Birth', value: birthDate },
+  ];
   function toggleIsOpen() {
     setIsOpen((previousIsOpen) => !previousIsOpen);
   }
@@ -50,12 +42,12 @@ export default function BusinessCard() {
       <div className="flex md:flex-col md:items-center gap-4 md:gap-2 w-full">
         <Avatar src={avatar} />
         <div className="flex flex-col md:items-center gap-1 md:gap-2">
-          <span className="text-lg md:text-2xl font-semibold">{fullname}</span>
+          <span className="text-lg md:text-2xl font-semibold">{firstName} {lastName}</span>
           <Tag>{title}</Tag>
         </div>
       </div>
       <ul className="flex flex-col gap-2 md:gap-4 w-full border-t border-stone-400 pt-4 md:pt-8">
-        {presentation.infoList.map((info) => (
+        {infoList.map((info) => (
           <li key={info.id}>
             <div className="flex gap-2 md:gap-4 items-center">
               <div className="size-7 md:size-9 bg-stone-200 rounded"></div>
@@ -68,7 +60,7 @@ export default function BusinessCard() {
         ))}
       </ul>
       <ul className="flex flex-col gap-2 md:gap-4 w-full border-t border-stone-400 pt-4 md:pt-8">
-        {presentation.sns.map((sns) => (
+        {snsList.map((sns) => (
           <li key={sns.id}>
             <div className="flex gap-2 md:gap-4 items-center">
               <div className="size-7 md:size-9 bg-stone-200 rounded"></div>

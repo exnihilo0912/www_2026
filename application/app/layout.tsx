@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
-
-import { BusinessCard } from "@/features/myself";
+import { fetchProfile, fetchSocialMediaServices, BusinessCard } from "@/features/introduction";
 import Header from '@/components/ui/Header';
 
 const geistSans = Geist({
@@ -25,12 +24,15 @@ interface RootLayoutProps {
   readonly children: React.ReactNode;
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default async function RootLayout({ children }: RootLayoutProps) {
+  const profile = await fetchProfile();
+  const snsList = await fetchSocialMediaServices();
+
   return (
     <html lang="en" data-theme="light">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col items-center bg-site-background dark:text-white`}>
         <main className="flex flex-col md:flex-row items-start p-3 gap-4 md:mt-12 w-full max-w-[1200] mb-[70]">
-          <BusinessCard />
+          <BusinessCard profile={profile} snsList={snsList} />
           <div className='relative bg-white grow-2 w-full h-fit px-4 md:px-6  py-8 md:py-10 rounded-2xl border border-stone-200'>
             <Header />
             <div>

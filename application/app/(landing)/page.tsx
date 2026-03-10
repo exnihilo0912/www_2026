@@ -1,41 +1,11 @@
 import PageTitle from "@/components/ui/PageTitle";
 import SectionTitle from "@/components/ui/SectionTitle";
 
-// TODO move in "presentationService.ts"
-interface Activity {
-  id: string;
-  title: string;
-  icon: string;
-  content: string;
-}
-const activities: Activity[] = [
-  {
-    id: 'web-dev-frontend',
-    icon: 'paint',
-    title: 'Frontend Web development',
-    content: 'High-quality development of sites at the professional level.',
-  },
-  {
-    id: 'web-dev-backend',
-    icon: 'website',
-    title: 'Backend Web development',
-    content: 'High-quality development of sites at the professional level.',
-  },
-  {
-    id: 'data-engineering',
-    icon: 'spider',
-    title: 'Web crawling',
-    content: 'High-quality development of sites at the professional level.',
-  },
-  {
-    id: 'dev-teaching',
-    icon: 'code',
-    title: 'Teaching & Mentoring',
-    content: 'High-quality development of sites at the professional level.',
-  }
-];
+import { fetchActivities } from '@/features/introduction';
 
 export default async function Home() {
+  const activities = await fetchActivities();
+
   return (
     <section className="flex flex-col gap-8">
       <PageTitle>About Me</PageTitle>
@@ -47,7 +17,7 @@ export default async function Home() {
           My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way. I created web design for many famous brand companies.
         </p>
       </div>
-      <section className="flex flex-col gap-6">
+      <section className="flex flex-col gap-4 md:gap-3">
         <SectionTitle>What I&apos;m Doing</SectionTitle>
         <ul className="flex flex-col gap-5 md:flex-row md:flex-wrap w-full">
           {activities.map((activity) => <li key={activity.id} className="md:w-[45%] grow">
