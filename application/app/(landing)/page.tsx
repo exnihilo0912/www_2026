@@ -11,10 +11,14 @@ export default async function Home() {
       <PageTitle>About Me</PageTitle>
       <div className="flex flex-col gap-4">
         <p>
-          I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media. I enjoy turning complex problems into simple, beautiful and intuitive designs.
+          I'm a Fullstack Software Engineer from Paris, France, working in web development.<br/> I enjoy solving complex challenges and implement simple & efficient solutions to complex problems.
         </p>
         <p>
-          My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way. I created web design for many famous brand companies.
+          I take pride in doing my job with care and with my best effort, both in the resulting product and its implementation code-wise.
+          I had the opportunity over the years to work in a wide-range of position and specialties, in different industries and company sizes.<br/>
+        </p>
+        <p>
+          My aim is to be part of a long term adventure, where I could participate and witness the growth of a company, its vision and products, through successes and challenges.
         </p>
       </div>
       <section className="flex flex-col gap-4 md:gap-3">
