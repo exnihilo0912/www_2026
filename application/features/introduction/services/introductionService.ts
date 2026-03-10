@@ -22,12 +22,14 @@ export async function fetchSocialMediaServices(): Promise<SocialMediaService[]> 
     {
       id: 'github',
       label: 'GitHub',
+      type: 'code',
       url: 'https://github.com/exnihilo0912',
       handle: 'exnihilo0912',
     },
     {
       id: 'linkedin',
       label: 'LinkedIn',
+      type: 'cv',
       url: 'https://www.linkedin.com/in/adam-emmanuel-118281102/',
       handle: 'adam-emmanuel-118281102',
     },
@@ -39,25 +41,25 @@ export async function fetchActivities(): Promise<Activity[]> {
   return [
     {
       id: 'web-dev-frontend',
-      icon: 'paint',
+      icon: 'window',
       title: 'Frontend Web development',
       content: 'High-quality development of sites at the professional level.',
     },
     {
       id: 'web-dev-backend',
-      icon: 'website',
+      icon: 'code',
       title: 'Backend Web development',
       content: 'High-quality development of sites at the professional level.',
     },
     {
       id: 'data-engineering',
-      icon: 'spider',
+      icon: 'globe-alt',
       title: 'Web crawling',
       content: 'High-quality development of sites at the professional level.',
     },
     {
       id: 'dev-teaching',
-      icon: 'code',
+      icon: 'academic-cap',
       title: 'Teaching & Mentoring',
       content: 'High-quality development of sites at the professional level.',
     }

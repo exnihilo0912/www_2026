@@ -21,4 +21,5 @@ export interface SocialMediaService {
   label: string;
   url: string;
   handle?: string;
+  type: 'code' | 'cv' | 'blog',
 }
