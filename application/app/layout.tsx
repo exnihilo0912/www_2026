@@ -26,12 +26,12 @@ export default function RootLayout({ children }: Readonly<{
 }>) {
   return (
     <html lang="en" data-theme="light">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen h-screen flex flex-col items-center bg-site-background dark:text-white`}>
-        <main className="flex flex-col md:flex-row items-start p-3 gap-6 md:gap-4 md:mt-12 w-full max-w-[1200] h-full">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col items-center bg-site-background dark:text-white`}>
+        <main className="flex flex-col md:flex-row items-start p-3 gap-6 md:gap-4 md:mt-12 w-full max-w-[1200] mb-[70]">
           <BusinessCard />
-          <div className='relative bg-white grow-2 w-full min-h-full p-6 rounded-2xl border border-stone-200'>
+          <div className='relative bg-white grow-2 w-full h-fit px-6 py-10 rounded-2xl border border-stone-200'>
             <Header />
-            <div className="">
+            <div>
               {children}
             </div>
           </div>

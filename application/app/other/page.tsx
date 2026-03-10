@@ -1,9 +1,9 @@
 import PageTitle from "@/components/ui/PageTitle";
 
-export default async function Resume() {
+export default async function Other() {
   return (
     <>
-      <PageTitle>Resume</PageTitle>
+      <PageTitle>Misc.</PageTitle>
     </>
   );
 }
