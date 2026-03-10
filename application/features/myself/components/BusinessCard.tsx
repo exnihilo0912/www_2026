@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import Avatar from "@/components/ui/Avatar";
 import Tag from "@/components/ui/Tag";
+import Link from "next/link";
 
 // TODO Add to myselfService/fetcher
 const presentation = {
@@ -19,8 +20,17 @@ const presentation = {
   ],
   sns: [
     {
-      id: 'email'
-    }
+      id: 'github',
+      label: 'GitHub',
+      url: 'https://github.com/exnihilo0912',
+      handle: 'exnihilo0912',
+    },
+    {
+      id: 'linkedin',
+      label: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/adam-emmanuel-118281102/',
+      handle: 'adam-emmanuel-118281102',
+    },
   ]
 };
 
@@ -44,15 +54,30 @@ export default function BusinessCard() {
           <Tag>{title}</Tag>
         </div>
       </div>
-      <ul className="flex flex-col gap-2 md:gap-4 w-full border-t border-stone-400 pt-4">
+      <ul className="flex flex-col gap-2 md:gap-4 w-full border-t border-stone-400 pt-4 md:pt-8">
         {presentation.infoList.map((info) => (
           <li key={info.id}>
-            <div className="flex gap-2 items-center">
-              <div className="size-7 bg-stone-200 rounded"></div>
+            <div className="flex gap-2 md:gap-4 items-center">
+              <div className="size-7 md:size-9 bg-stone-200 rounded"></div>
               <div className="flex flex-col">
                 <div className="uppercase text-xs text-stone-500">{info.label}</div>
                 <div className="text-sm">{info.value}</div>
               </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <ul className="flex flex-col gap-2 md:gap-4 w-full border-t border-stone-400 pt-4 md:pt-8">
+        {presentation.sns.map((sns) => (
+          <li key={sns.id}>
+            <div className="flex gap-2 md:gap-4 items-center">
+              <div className="size-7 md:size-9 bg-stone-200 rounded"></div>
+              <Link href={sns.url} target="_blank">
+                <div className="flex flex-col">
+                  <div className="uppercase text-xs text-stone-500">{sns.label}</div>
+                  <div className="text-sm">{sns.handle}</div>
+                </div>
+              </Link>
             </div>
           </li>
         ))}

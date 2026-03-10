@@ -3,7 +3,8 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
-  --color-site-background: rgb(236, 239, 243);
+  --color-site-background: hsl(50, 50%, 98%);
+  /* --color-site-background: rgb(236, 239, 243); */
   --color-base: #ffffff;
   --color-base-border: rgb(235, 238, 243);
   --color-panel: rgb(246, 248, 250);

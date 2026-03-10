@@ -1,4 +1,5 @@
 import PageTitle from "@/components/ui/PageTitle";
+import SectionTitle from "@/components/ui/SectionTitle";
 
 // TODO move in "presentationService.ts"
 interface Activity {
@@ -46,13 +47,12 @@ export default async function Home() {
           My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way. I created web design for many famous brand companies.
         </p>
       </div>
-      {/* Add Section comp, with h2-title */}
-      <section>
-        <h2 className="text-2xl font-bold mb-3">What I&apos;m Doing</h2>
-        <ul className="flex flex-col gap-3 md:flex-row md:flex-wrap w-full">
+      <section className="flex flex-col gap-6">
+        <SectionTitle>What I&apos;m Doing</SectionTitle>
+        <ul className="flex flex-col gap-5 md:flex-row md:flex-wrap w-full">
           {activities.map((activity) => <li key={activity.id} className="md:w-[45%] grow">
             {/* TODO align rounded value across app */}
-            <article className="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-4 border border-stone-300 rounded-xl p-3 md:p-5">
+            <article className="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-4 border border-stone-300 rounded-xl p-5 md:p-8">
               <header>
                 <div className="size-10 bg-stone-200 rounded-lg"></div>
               </header>
