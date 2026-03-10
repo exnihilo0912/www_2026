@@ -21,9 +21,11 @@ export const metadata: Metadata = {
   description: "Adam Emmanuel -- Portfolio - 2026",
 };
 
-export default function RootLayout({ children }: Readonly<{
-  children: React.ReactNode;
-}>) {
+interface RootLayoutProps {
+  readonly children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" data-theme="light">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col items-center bg-site-background dark:text-white`}>

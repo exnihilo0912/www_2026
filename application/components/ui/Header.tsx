@@ -1,3 +1,5 @@
+'use client';
+
 import {
   AcademicCapIcon,
   CommandLineIcon,
@@ -6,6 +8,7 @@ import {
   UserCircleIcon,
 } from '@heroicons/react/24/outline';
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const menuItems = [
   { id: 'home', label: 'Home', icon: <HomeIcon />, path: '/' },
@@ -14,7 +17,8 @@ const menuItems = [
   { id: 'misc', label: 'Misc.', icon: <QuestionMarkCircleIcon />, path: '/other' },
 ];
 
-export default function Header({ pathname = '/' }: { pathname?: string }) {
+export default function Header() {
+  const pathname= usePathname();
   const pageRoot = pathname.split('/').filter(Boolean).at(0);
   const isActive = (path: string) => path.split('/').filter(Boolean).at(0) === pageRoot;
 
@@ -25,8 +29,8 @@ export default function Header({ pathname = '/' }: { pathname?: string }) {
               {menuItems.map(({ id, icon, label, path }) =>
                 <li key={id} className={
                   [
-                    "flex items-center justify-center text-stone-500 rounded hover:text-stone-800 px-2 py-1",
-                    isActive(path) ? "text-stone-800 font-semibold": ""
+                    "flex items-center justify-center font-semibold text-stone-500 rounded hover:text-stone-800 px-2 py-1",
+                    isActive(path) ? "text-stone-800": ""
                   ].join(' ')
                 }>
                   <Link href={path}>
@@ -37,13 +41,6 @@ export default function Header({ pathname = '/' }: { pathname?: string }) {
               )}
             </ul>
           </nav>
-          <Status pathname={pathname}/>
     </header>
   );
-}
-
-function Status({ pathname }: { pathname: string}) {
-  const pageRoot = pathname.split('/').filter(Boolean).at(0);
-
-  return <div>{pageRoot}</div>
 }

@@ -12,6 +12,16 @@ const presentation = {
   status: 'available',
   skills: ['html/css', 'js', 'ts', 'react', 'node', 'next.js', 'tailwind'],
   avatar: '/images/avatar.webp',
+  infoList: [
+    { id: 'email', label: 'email', value: 'adam.emmanuel.pro@gmail.com' },
+    { id: 'dob', label: 'birthday', value: 'August 9th, 1992' }, //TODO replace with iso & toLocalDate
+    { id: 'location', label: 'location', value: 'Etampes (91), France' },
+  ],
+  sns: [
+    {
+      id: 'email'
+    }
+  ]
 };
 
 export default function BusinessCard() {
@@ -21,7 +31,7 @@ export default function BusinessCard() {
     setIsOpen((previousIsOpen) => !previousIsOpen);
   }
   const businessCardClasses = 'relative md:sticky md:top-15 flex flex-col items-center md:max-h-full overflow-hidden w-full md:w-auto p-5 md:p-5 gap-4 md:gap-6 shadow-basic shadow-base-shadow rounded-2xl bg-white shrink-0 border border-stone-200 transition-all duration-500';
-  const foldedBusinessCardClasses = isOpen ? 'max-h-[250]' : 'max-h-[98]';
+  const foldedBusinessCardClasses = isOpen ? 'max-h-[500]' : 'max-h-[98]';
 
   return (
     <div className={[businessCardClasses, foldedBusinessCardClasses].join(' ')}>
@@ -34,25 +44,18 @@ export default function BusinessCard() {
           <Tag>{title}</Tag>
         </div>
       </div>
-      <ul className="p-0 m-0 w-full md:flex md:flex-col md:gap-4 border-t border-stone-400 pt-4">
-        <li>
-          <div className="flex gap-2 items-center">
-            <div className="size-7 bg-stone-200 rounded"></div>
-            <div>
-              <div className="uppercase font-semibold text-sm text-stone-500 tracking-">email</div>
-              <div className="text-sm">adam.emmanuel.pro@gmail.com</div>
+      <ul className="flex flex-col gap-2 md:gap-4 w-full border-t border-stone-400 pt-4">
+        {presentation.infoList.map((info) => (
+          <li key={info.id}>
+            <div className="flex gap-2 items-center">
+              <div className="size-7 bg-stone-200 rounded"></div>
+              <div className="flex flex-col">
+                <div className="uppercase text-xs text-stone-500">{info.label}</div>
+                <div className="text-sm">{info.value}</div>
+              </div>
             </div>
-          </div>
-        </li>
-        <li>
-          <div className="flex gap-2 items-center">
-            <div className="size-7 bg-stone-200 rounded"></div>
-            <div>
-              <div className="uppercase font-semibold text-sm text-stone-500 tracking-">birthday</div>
-              <div className="text-sm">August 9th, 1992</div>
-            </div>
-          </div>
-        </li>
+          </li>
+        ))}
       </ul>
     </div>
   );
