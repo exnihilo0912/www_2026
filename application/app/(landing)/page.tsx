@@ -45,7 +45,7 @@ export default async function Home() {
             return (
               <li key={activity.id} className="md:w-[45%] grow">
                 {/* TODO align rounded value across app */}
-                <article className="flex flex-col md:flex-row items-center md:items-start min-h-[200] md:min-h-[180] gap-2 md:gap-4 border border-stone-300 rounded-xl p-5 md:p-8">
+                <article className="flex flex-col md:flex-row items-center md:items-start min-h-[200] gap-2 md:gap-4 border border-stone-300 rounded-xl p-5 md:p-8">
                   <header>
                       <Icon className="size-10 text-stone-300" />
                   </header>
