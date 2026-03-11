@@ -43,25 +43,25 @@ export async function fetchActivities(): Promise<Activity[]> {
       id: 'web-dev-frontend',
       icon: 'window',
       title: 'Frontend Web development',
-      content: 'High-quality development of sites at the professional level.',
+      content: 'Development of High-quality website at the professional level, with special care for UI/UX.',
     },
     {
       id: 'web-dev-backend',
       icon: 'code',
       title: 'Backend Web development',
-      content: 'High-quality development of sites at the professional level.',
+      content: 'Development of robust and efficient backends and APIs.',
     },
     {
       id: 'data-engineering',
       icon: 'globe-alt',
       title: 'Web crawling',
-      content: 'High-quality development of sites at the professional level.',
+      content: 'Crawling & cleansing data from sources of various type, size and scale.',
     },
     {
       id: 'dev-teaching',
       icon: 'academic-cap',
       title: 'Teaching & Mentoring',
-      content: 'High-quality development of sites at the professional level.',
+      content: 'Experiences as Teaching Assistant and Academic Advisor, but also mentoring junior in different specialties.',
     }
   ];
 }
