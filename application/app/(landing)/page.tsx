@@ -39,13 +39,13 @@ export default async function Home() {
       </div>
       <section className="flex flex-col gap-4 md:gap-3">
         <SectionTitle>What I&apos;m Doing</SectionTitle>
-        <ul className="flex flex-col gap-5 md:flex-row md:flex-wrap w-full">
+        <ul className="flex flex-col gap-5 lg:flex-row md:flex-wrap w-full">
           {activities.map((activity) => {
             const Icon = iconByIconName[activity.icon] || QuestionMarkCircleIcon;
             return (
               <li key={activity.id} className="md:w-[45%] grow">
                 {/* TODO align rounded value across app */}
-                <article className="flex flex-col md:flex-row items-center md:items-start h-[200] md:h-[180] gap-2 md:gap-4 border border-stone-300 rounded-xl p-5 md:p-8">
+                <article className="flex flex-col md:flex-row items-center md:items-start min-h-[200] md:min-h-[180] gap-2 md:gap-4 border border-stone-300 rounded-xl p-5 md:p-8">
                   <header>
                       <Icon className="size-10 text-stone-300" />
                   </header>
