@@ -4,7 +4,7 @@ export type IndividualContributorSeniority = 'intern' | 'junior' | 'mid_level' |
 export type ManagementSeniority = 'manager' | 'senior_manager' | 'director' | 'senior_director' | 'vp' | 'cto';
 export interface WorkExperience {
   id: string;
-  entity_id: string;
+  entity: Entity;
   title: string;
   contract_type: ContractType;
   location: Location;
