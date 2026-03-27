@@ -14,16 +14,41 @@ export interface WorkExperience {
   specialties?: Specialty[];
   start_date: string;
   end_date?: string;
-  skills: string[]; // TODO replace with "skill" type (name, type [library, language, software, framework, concept, ...])
-  description: string; // TODO replace with "tasks/missions" type
-  challenges?: string[]; // Notable challenges I faced and overcame
-  outcomes?: string[]; // What did I learn from this experience
+  work_experience_detail?: WorkExperienceDetail;
 }
 export type Specialty = 'frontend' | 'backend' | 'full_stack' | 'mobile' | 'devops' | 'data_engineer';
 export type CompanySize = '1' | '2-10' | '10-50' | '50-100' | '100-500' | '500-1000' | '1000-5000' | '5000-10000' | '10000+';
 export interface Location {
   country: string;
   city?: string;
+}
+export interface WorkExperienceDetail {
+  title: string;
+  description: string;
+  technologies?: Technology[];
+  skills?: Skill[];
+  challenges?: string[];
+  achievements?: string[];
+}
+
+export interface Skill {
+  name: string;
+  category: SkillCategory;
+  type: SkillType;
+}
+type SkillCategory = 'hard' | 'soft';
+type SkillType = 'leadership' | 'engineering';
+
+export interface Technology {
+  name: string;
+  category: string;
+  type: string;
+  specialty: TechnologySpecialty;
+}
+
+interface TechnologySpecialty {
+  name: string;
+  parentId?: string;
 }
 export interface Entity {
   id: string;

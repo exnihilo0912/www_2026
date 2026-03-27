@@ -14,25 +14,10 @@ export default async function Resume() {
     content: description,
   }));
 
-  // {
-  //   id: 'two',
-  //   entity: entities[1],
-  //   title: 'Data Engineer',
-  //   contract_type: 'permanent_contract',
-  //   location: { city: 'seoul', country: 'KR' },
-  //   work_from: 'on_site',
-  //   start_date: '2025-08-04',
-  //   end_date: '2025-12-12',
-  //   skills: ['JavaScript', 'TypeScript', 'React', 'Meteor'],
-  //   description: 'blabla',
-  //   individual_contributor_seniority: 'mid_level',
-  //   specialties: ['data_engineer', 'full_stack'],
-  // },
-
   return (
     <section className="flex flex-col gap-8">
       <PageTitle>Resume</PageTitle>
-      <Timeline icon={<AcademicCapIcon/>}name="Work Experiences" items={timelineWorkExperiences}/>
+      <Timeline icon={<AcademicCapIcon/>} name="Work Experiences" items={timelineWorkExperiences}/>
     </section>
   );
 }

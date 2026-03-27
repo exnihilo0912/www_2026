@@ -1,4 +1,10 @@
-import  { Specialty, CompanySize, Entity, WorkExperience } from '../types';
+import  {
+  CompanySize,
+  Entity,
+  Specialty,
+  WorkExperience,
+  WorkExperienceDetail,
+} from '../types';
 
 export const specialties: { id: Specialty; label: string; }[] = [
   { id: 'frontend', label: 'Frontend Engineer' },
@@ -92,6 +98,9 @@ export const workExperiences: WorkExperience[] = [
     specialties: ['frontend'],
   },
 ];
+export const workExperiencesDetails: WorkExperienceDetail[] = [];
+
+
 
 // TODO Replace by API call
 export async function fetchWorkExperiences(): Promise<WorkExperience[]> {
